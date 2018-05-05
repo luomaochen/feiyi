@@ -23,31 +23,76 @@
         <div class="art-submit"><a href="#">搜索</a></div>
       </form>
     </article>
+    <section class="lunbo-img">
+      <div id="lunbo-container">
+        <div class="title-left">
+          图片标题这是一幅非常不错的不错的体育运动图片这真的很棒！
+        </div>
+        <div class="swiper">
+          <swiper :options="swiperOption" ref="mySwiper">
+            <swiper-slide class="swiper-slide games"><img src="./image/lunboimg1.jpg"></swiper-slide>
+            <swiper-slide class="swiper-slide games"><img src="./image/lunboimg2.jpg" ></swiper-slide>
+            <swiper-slide class="swiper-slide games"><img src="./image/lunboimg3.jpg"></swiper-slide>
+            <swiper-slide class="swiper-slide games"><img src="./image/lunboimg4.jpg"></swiper-slide>
+            <swiper-slide class="swiper-slide games"><img src="./image/lunboimg5.jpg"></swiper-slide>
+          </swiper>
+        </div>
+        <div class="title-right">
+          <img src="./image/yinzhang.png">
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-
-  export default{
-    data() {
+  import 'swiper/dist/css/swiper.css'
+  import {swiper, swiperSlide} from 'vue-awesome-swiper'
+  export default {
+    name: 'carrousel',
+    data () {
       return {
-        datas: [],
-        id: ''
+        swiperOption: {
+          // swiper configs 所有的配置同swiper官方api配置
+          autoplay: {
+            delay: 3000,//5秒切换一次
+          },
+          effect : 'fade',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '" style="color:#5a3223">' + (index + 1) + '</span>';
+            },
+          },
+          loop: true,
+        }
       }
     },
-
+    components: {
+      swiper,
+      swiperSlide
+    },
+    methods: {},
+    mounted: function () {
+      console.log('mounted swiper')
+    }
   }
 </script>
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
+
+
   .header
     height: 211px
-    width: 100%
+    width: 1880px
     padding-top: 55px
     padding-left: 80px
   //  background-color: aqua
     .head-info-box
-      width: 1170px
+      width: 1500px
       height: 156px
       /*background-color blueviolet*/
       .head-image
@@ -74,7 +119,6 @@
     background-image: url(./image/fenge1.png)
     .nav-ul
       list-style: none
-      background-color: red
       li
         float: left
         line-height: 70px
@@ -89,28 +133,91 @@
   .nav-article
     margin: 22px
     .art-form
-      margin :auto
+      margin: auto
       width: 896px
       height: 72px
-      display :flex
+      display: flex
       .art-input
         width: 720px
         height: 72px
-        border-radius:10px
-        font-size :45px
+        border-radius: 10px
+        font-size: 45px
         font-family: '隶书'
+        outline: none
       .art-submit
-        background-color :#d4c7ad
-        line-height :72px
-        text-align :center
-        margin-left :30px
+        background-color: #d4c7ad
+        line-height: 72px
+        text-align: center
+        margin-left: 30px
         font-size: 50px
         font-family: '隶书'
         height: 72px
-        width :146px
-        border-radius:10px
+        width: 146px
+        border-radius: 10px
         a
           text-decoration: none
           color: #5a3224
+
+  .lunbo-img
+    width: 1728px
+    height: 730px
+    margin: auto
+    position :relative
+    background-image: url(./image/juanzhou.png)
+    background-size: 1728px 730px
+    #lunbo-container
+      position :absolute
+      top: 70px
+      left :160px
+      margin: auto
+      width:80%
+      height: 80%
+      display :flex
+      .title-left
+        width :81px
+        writing-mode: vertical-lr/*从左向右 从右向左是 writing-mode: vertical-rl;*/
+        margin-top :20px
+        font-family: '隶书'
+        font-size: 25px
+        line-height :35px
+        color: #5a3224
+      .swiper
+          width :1120px
+          height :550px
+          margin auto
+          .swiper-slide
+            width :1120px
+            height :550px
+            background: #234356
+            img
+              width:1120px
+              height:550px
+        .title-right
+          width :81px
+          img
+            margin-top :56px
+            margin-left :5px
+            width :48px
+            height :48px
+          .swiper-pagination
+            position:relative
+            width:30px
+            margin-top :200px
+            margin-left :15px
+          .swiper-pagination-bullet
+            width:30px
+            height :30px
+            line-height :30px
+            color :#5a3223
+            text-align :center
+            margin-top :8px
+            border :solid #9a7c69
+            background :rgb(255,255,255)
+          .swiper-pagination-bullet-active
+            background:#898989
+
+
+
+
 
 </style>
