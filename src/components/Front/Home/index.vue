@@ -43,6 +43,50 @@
         </div>
       </div>
     </section>
+    <div class="hr"></div>
+    <section class="jiansuo">
+      <myhr></myhr>
+      <article class="leibie">
+        <span>
+          <div><img src="./image/wushu.png"></div>
+          <div class="leibie-title">武术类</div>
+        </span>
+        <span>
+          <div><img src="./image/qiu.png"></div>
+          <div class="leibie-title">球类</div>
+        </span>
+        <span>
+          <div><img src="./image/shuaijiao.png"></div>
+          <div class="leibie-title">摔跤类</div>
+        </span>
+        <span>
+          <div><img src="./image/jingdu.png"></div>
+          <div class="leibie-title">竞渡类</div>
+        </span>
+        <span>
+          <div><img src="./image/youxi.png"></div>
+          <div class="leibie-title">游戏类</div>
+        </span>
+        <span>
+          <div><img src="./image/wulong.png"></div>
+          <div class="leibie-title">舞龙类</div>
+        </span>
+        <span>
+          <div><img src="./image/wushi.png"></div>
+          <div class="leibie-title">舞狮类</div>
+        </span>
+        <span>
+          <div><img src="./image/jianwu.png"></div>
+          <div class="leibie-title">健舞类</div>
+        </span>
+        <span>
+          <div><img src="./image/saihui.png"></div>
+          <div class="leibie-title">赛会类</div>
+        </span>
+      </article>
+      <article class="jibie"></article>
+    </section>
+
 
   </div>
 </template>
@@ -50,6 +94,7 @@
 <script type="text/ecmascript-6">
   import 'swiper/dist/css/swiper.css'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
+  import Myhr from '@/components/Front/Frontcomponents/hr'
   export default {
     name: 'carrousel',
     data () {
@@ -73,7 +118,8 @@
     },
     components: {
       swiper,
-      swiperSlide
+      swiperSlide,
+      Myhr
     },
     methods: {},
     mounted: function () {
@@ -215,6 +261,38 @@
             background :rgb(255,255,255)
           .swiper-pagination-bullet-active
             background:#898989
+  .hr
+    width: 1800px
+    height: 20px
+    margin: 38px auto
+    background-image: url(./image/fenge2.png)
+    background-size: 1800px 20px
+  .jiansuo
+    width :1728px
+    height :362px
+    margin :auto
+    /*background-color :aqua*/
+    .leibie
+      margin-top :15px
+      display :flex
+      span
+        width :156px
+        height :130px
+        margin-left :35px
+        img
+          display :block
+          width :100px
+          height :83px
+          margin :auto
+          text-align :center
+        .leibie-title
+          width :156px
+          height :40px
+          margin :auto
+          text-align :center
+          font-size :35px
+          color :#5a3324
+          font-family: '隶书'
 
 
 
