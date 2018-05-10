@@ -1,13 +1,23 @@
 <template>
     <div class="title">
       <div class="title-left"></div>
-      <img class="tittle-middle" src="./image/kuaisujs.png">
+      <img :src="hrimg">
       <div class="title-right"></div>
+
     </div>
 </template>
 
 <script type="text/ecmascript-6">
+  export default {
+    name: 'carrousel',
+    data () {
+    return {
+      }
+    },
+    props: ['hrimg'],
 
+
+  }
 
 </script>
 
