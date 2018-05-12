@@ -3,7 +3,7 @@
     <div class="video-detail1" >
       <article class="video-item" v-for="n in 4">
         <a href="http://www.w3school.com.cn" target="_blank">
-          <video src="./image/movie3.mp4">
+          <video src="./image/movie.mp4">
             您的浏览器不支持video
           </video>
         </a>

@@ -12,9 +12,9 @@
       <ul class="nav-ul">
         <li >首页</li>
         <li @click="go('Feiyi')">非遗项目</li>
-        <li @click="go('Next')">传承人</li>
+        <!--<li @click="go('Next')">传承人</li>-->
         <li @click="go('Message')">信息动态</li>
-        <li @click="go('Abroad')">域外项目</li>
+        <!--<li @click="go('Abroad')">域外项目</li>-->
         <li @click="go('Myself')">关于我们</li>
       </ul>
     </nav>
@@ -119,11 +119,8 @@
       <span class="href-content"><a href="#">XXXXXXXXXXXX</a></span>
       <span class="href-content"><a href="#">XXXXXXXXXXXX</a></span>
     </section>
-
-    <section class="foot">
-      <div class="foot-top">&copy 2018体育非遗 协议 合作平台 京ICP证012345号</div>
-      <div class="foot-bottom">京公网安备11111111111号</div>
-    </section>
+    <div class="hr"></div>
+    <foots></foots>
 
     <img class="bk-img1" src="./image/bkimg1.png">
     <img class="bk-img2" src="./image/bkimg2.png">
@@ -142,6 +139,7 @@
   import Hots from '@/components/Front/Frontcomponents/hot'
   import Photos from '@/components/Front/Frontcomponents/photo'
   import Videos from '@/components/Front/Frontcomponents/video'
+  import Foots from '@/components/Front/Frontcomponents/foot'
 
   export default {
     name: 'carrousel',
@@ -178,7 +176,8 @@
       Maps,
       Photos,
       Videos,
-      Hots
+      Hots,
+      Foots
     },
     mounted() {
 
@@ -226,7 +225,7 @@
         float: left
         line-height: 70px
         text-align: center
-        margin-left: 90px
+        margin-left: 190px
         font-size: 50px
         text-decoration: none
         color: #5a3224
@@ -414,17 +413,7 @@
         font-size: 23px
         text-decoration: none
 
-  .foot
-    margin :140px  auto
-    margin-bottom :15px
-    width :600px
-    height :92px
-    font-family: '隶书'
-    color: #5a3224
-    font-size: 23px
-    .foot-bottom
-      width :50%
-      margin:15px auto
+
 
 
 

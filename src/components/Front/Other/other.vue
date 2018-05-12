@@ -20,10 +20,10 @@
       <nav class="nav">
         <ul class="nav-ul">
           <li @click="go('Home_index')">首页</li>
-          <li><router-link class="other-href other-href1" to="/other/feiyi">非遗项目</router-link></li>
-          <li><router-link class="other-href" to="/other/next">传承人</router-link></li>
+          <li><router-link class="other-href" :class="qq ? 'other-href1' : 'other-href2' " to="/other/feiyi">非遗项目</router-link></li>
+          <!--<li><router-link class="other-href" to="/other/next">传承人</router-link></li>-->
           <li><router-link class="other-href" to="/other/message">信息动态</router-link></li>
-          <li><router-link class="other-href" to="/other/abroad">域外项目</router-link></li>
+          <!--<li><router-link class="other-href" to="/other/abroad">域外项目</router-link></li>-->
           <li><router-link class="other-href" to="/other/myself">关于我们</router-link></li>
         </ul>
       </nav>
@@ -31,8 +31,9 @@
   </header>
   <div class="hr"></div>
 
+
   <section>
-    <router-view></router-view>
+    <router-view v-on:child-say="listenToMyBoy"></router-view>
   </section>
 </div>
 </template>
@@ -44,7 +45,8 @@
         data() {
             return {
                 datas: [],
-                id: ''
+                id: '',
+                qq:'',
             }
         },
         methods: {
@@ -52,6 +54,9 @@
             this.$router.push({
               name: name
             })
+          },
+          listenToMyBoy: function (somedata){
+            this.qq = somedata
           }
         },
         created() {
@@ -77,7 +82,7 @@
     height :290px
     width :100%
     display :flex
-    .header-left
+    .other-left
       width :230px
       height :172px
       margin-left :160px
@@ -133,7 +138,7 @@
             float: left
             line-height: 60px
             text-align: center
-            margin-left: 60px
+            margin-left: 150px
             font-size: 45px
             text-decoration: none
             color: #5a3224
